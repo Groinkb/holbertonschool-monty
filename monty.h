@@ -21,8 +21,8 @@ extern int push_arg;
 typedef struct stack_s
 {
 	int n;
-	struct stack_s *prev;
 	struct stack_s *next;
+	struct stack_s *prev;
 } stack_t;
 
 /**
