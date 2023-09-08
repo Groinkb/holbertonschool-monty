@@ -1,6 +1,27 @@
-
 #include "monty.h"
 
+/**
+ * _pstr - Prints the string starting from the top of the stack.
+ * @stack: Pointer to the linked list representing the stack.
+ * @line_number: Line number where the opcode occurs.
+ */
+void _pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+	int c = 0;
+
+	(void)line_number;
+
+	while (tmp)
+	{
+		c = tmp->n;
+		if (c == 0 || _isalpha(c) == 0)
+			break;
+		putchar(c);
+		tmp = tmp->next;
+	}
+	putchar('\n');
+}
 
 /**
  * _rotl - Rotates the stack to the left.
@@ -20,7 +41,7 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	while (runner->next)
 	{
 		runner = runner->next;
-		runner->prev->n = runner->n
+		runner->prev->n = runner->n;
 	}
 
 	runner->n = aux1;
@@ -40,7 +61,7 @@ void _rotr(stack_t **stack, unsigned int line_number)
 		return;
 
 	while (runner->next)
-	runner = runner->next
+		runner = runner->next;
 
 	aux1 = runner->n;
 
