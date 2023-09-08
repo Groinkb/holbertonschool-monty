@@ -49,8 +49,8 @@ typedef struct instruction_s
 typedef struct global_variable
 {
 	FILE *file;
-	int push_arg;
 	char *buffer;
+	int push_arg;
 } global_var;
 
 extern global_var var_global;
